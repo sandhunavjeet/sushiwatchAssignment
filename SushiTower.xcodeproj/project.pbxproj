@@ -14,6 +14,7 @@
 		0571021B2215F1400064C3E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0571021A2215F1400064C3E1 /* Assets.xcassets */; };
 		0571021E2215F1400064C3E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0571021C2215F1400064C3E1 /* LaunchScreen.storyboard */; };
 		05710228221936ED0064C3E1 /* SushiPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05710227221936ED0064C3E1 /* SushiPiece.swift */; };
+		4324E3392370B3B8007F5922 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4324E3382370B3B7007F5922 /* GoogleService-Info.plist */; };
 		D40C9EA3236CDB0D00BEAB9D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D40C9EA1236CDB0D00BEAB9D /* Interface.storyboard */; };
 		D40C9EA5236CDB1000BEAB9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D40C9EA4236CDB1000BEAB9D /* Assets.xcassets */; };
 		D40C9EAC236CDB1000BEAB9D /* SushiWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D40C9EAB236CDB1000BEAB9D /* SushiWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -75,6 +76,7 @@
 		0571021D2215F1400064C3E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0571021F2215F1400064C3E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05710227221936ED0064C3E1 /* SushiPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SushiPiece.swift; sourceTree = "<group>"; };
+		4324E3382370B3B7007F5922 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D40C9E9F236CDB0D00BEAB9D /* SushiWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SushiWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D40C9EA2236CDB0D00BEAB9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		D40C9EA4236CDB1000BEAB9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				0571021A2215F1400064C3E1 /* Assets.xcassets */,
 				0571021C2215F1400064C3E1 /* LaunchScreen.storyboard */,
 				0571021F2215F1400064C3E1 /* Info.plist */,
+				4324E3382370B3B7007F5922 /* GoogleService-Info.plist */,
 			);
 			path = SushiTower;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				057102192215F1400064C3E1 /* Main.storyboard in Resources */,
+				4324E3392370B3B8007F5922 /* GoogleService-Info.plist in Resources */,
 				0571021B2215F1400064C3E1 /* Assets.xcassets in Resources */,
 				0571021E2215F1400064C3E1 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -508,7 +512,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+				WATCHOS_DEPLOYMENT_TARGET = 5.0;
 			};
 			name = Debug;
 		};
@@ -530,7 +534,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+				WATCHOS_DEPLOYMENT_TARGET = 5.0;
 			};
 			name = Release;
 		};

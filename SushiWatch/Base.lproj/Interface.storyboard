@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="watchOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
     </dependencies>
@@ -14,7 +13,16 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="SushiWatch" customModuleProvider="target">
                     <items>
-                        <label alignment="center" text="SushiWatch" textAlignment="center" id="bx4-yG-YDh"/>
+                        <label alignment="center" text="SushiWatch" textAlignment="center" id="bx4-yG-YDh">
+                            <gestureRecognizers>
+                                <tapGestureRecognizer id="wh2-HK-Nqm">
+                                    <connections>
+                                        <action selector="tapPause:" destination="AgC-eL-Hgc" id="TeU-Me-gIB"/>
+                                    </connections>
+                                </tapGestureRecognizer>
+                                <tapGestureRecognizer numberOfTapsRequired="2" id="2Bx-sC-jHA"/>
+                            </gestureRecognizers>
+                        </label>
                         <group width="1" height="35" alignment="left" id="dfe-Ut-v05">
                             <items>
                                 <button width="0.40000000000000002" height="1" alignment="left" backgroundImage="left" id="ss3-i8-6Jh">
@@ -50,6 +58,7 @@
                         <outlet property="btnMoreTimeOutlet" destination="P8P-Qz-hs3" id="VAu-JJ-aET"/>
                         <outlet property="btnMoveRight" destination="lFS-iO-vKm" id="84N-8v-Y8X"/>
                         <outlet property="btnMoveleft" destination="ss3-i8-6Jh" id="046-XU-Qtm"/>
+                        <outlet property="lblSushiWatch" destination="bx4-yG-YDh" id="Szu-v1-SzT"/>
                         <outlet property="lblTimeRemaining" destination="Tut-E1-Cyu" id="cSu-9d-mbR"/>
                     </connections>
                 </controller>

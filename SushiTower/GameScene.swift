@@ -52,7 +52,17 @@ class GameScene: SKScene, WCSessionDelegate {
                     self.timeBar.position.x = self.size.width/2
                 }
                //self.powerUpCount = self.powerUpCount + 1
+          
             }
+       
+            if (message.keys.contains("pause")){
+                //Pause the Game as per Watch Command
+                self.secondsRemainingLabel.text = "GAME PAUSED"
+                self.scene!.view?.isPaused = true
+                
+                
+            }
+        
         }
     }
     

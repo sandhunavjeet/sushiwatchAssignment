@@ -12,25 +12,15 @@ import WatchConnectivity
 
 
 class InterfaceController: WKInterfaceController, WCSessionDelegate {
-    @IBAction func TAP(_ sender: Any) {
-        
-        if (WCSession.default.isReachable) {
-            print("phone reachable")
-            let message = ["moveDirection": "right"]
-            WCSession.default.sendMessage(message, replyHandler: nil)
-            // output a debug message to the console
-            print("sent move right to phone")
-        }
-        else {
-            print("WATCH: Cannot reach phone")
-        }
-    }
+   
     @IBOutlet weak var btnMoveleft: WKInterfaceButton!
     
+    @IBOutlet weak var lblSushiWatch: WKInterfaceLabel!
     @IBOutlet weak var btnMoveRight: WKInterfaceButton!
     @IBOutlet weak var lblTimeRemaining: WKInterfaceLabel!
     
     @IBOutlet weak var btnMoreTimeOutlet: WKInterfaceButton!
+    
     
     var timeRemaining = 25
     
@@ -52,6 +42,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         else {
             print("Watch does not support WCSession")
         }
+       
     }
 
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
@@ -137,10 +128,27 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             let message = ["moveDirection": "right"]
             WCSession.default.sendMessage(message, replyHandler: nil)
             // output a debug message to the console
+            
+           
             print("sent move right to phone")
         }
         else {
             print("WATCH: Cannot reach phone")
         }
+    }
+    @IBAction func tapPause(_ sender: Any) {
+        
+        
+            if (WCSession.default.isReachable) {
+                print("Phone reachable")
+                let message = ["pause": "yes"]
+                WCSession.default.sendMessage(message, replyHandler: nil)
+                // output a debug message to the console
+                print("sent pause request to phone")
+                self.lblSushiWatch.setText("Paused! TapTwice to Resume")
+            }
+            else {
+                print("WATCH: Cannot reach phone")
+            }
     }
 }
