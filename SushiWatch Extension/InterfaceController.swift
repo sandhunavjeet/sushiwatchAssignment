@@ -12,6 +12,19 @@ import WatchConnectivity
 
 
 class InterfaceController: WKInterfaceController, WCSessionDelegate {
+    @IBAction func TAP(_ sender: Any) {
+        
+        if (WCSession.default.isReachable) {
+            print("phone reachable")
+            let message = ["moveDirection": "right"]
+            WCSession.default.sendMessage(message, replyHandler: nil)
+            // output a debug message to the console
+            print("sent move right to phone")
+        }
+        else {
+            print("WATCH: Cannot reach phone")
+        }
+    }
     @IBOutlet weak var btnMoveleft: WKInterfaceButton!
     
     @IBOutlet weak var btnMoveRight: WKInterfaceButton!

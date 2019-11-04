@@ -35,7 +35,7 @@ class GameScene: SKScene, WCSessionDelegate {
             
             
             
-            if (message.keys.contains("moreTimeReply")){
+            if (message.keys.contains("moreTimeNeeded")){
                 //phone accepted more time powerup
                 if (self.SecondsRemaining <= 15) {
                     // add 10 seconds to Time remaining
@@ -61,7 +61,7 @@ class GameScene: SKScene, WCSessionDelegate {
     let sushiBase = SKSpriteNode(imageNamed:"roll")
 
     // Make a tower
-    var sushiTower:[SushiPiece] = []
+    var sushiPieceTower:[SushiPiece] = []
     let SUSHI_PIECE_GAP:CGFloat = 80
     var catPosition = "left"
     
@@ -94,14 +94,14 @@ class GameScene: SKScene, WCSessionDelegate {
         let sushi = SushiPiece(imageNamed:"roll")
         
         // 2. Position sushi 10px above the previous one
-        if (self.sushiTower.count == 0) {
+        if (self.sushiPieceTower.count == 0) {
             // Sushi tower is empty, so position the piece above the base piece
             sushi.position.y = sushiBase.position.y
                 + SUSHI_PIECE_GAP
             sushi.position.x = self.size.width*0.5
         }
         else {
-            let previousSushi = sushiTower[self.sushiTower.count - 1]
+            let previousSushi = sushiPieceTower[self.sushiPieceTower.count - 1]
             sushi.position.y = previousSushi.position.y + SUSHI_PIECE_GAP
             sushi.position.x = self.size.width*0.5
         }
@@ -110,7 +110,7 @@ class GameScene: SKScene, WCSessionDelegate {
         addChild(sushi)
         
         // 4. Add sushi to array
-        self.sushiTower.append(sushi)
+        self.sushiPieceTower.append(sushi)
     }
     
     override func didMove(to view: SKView) {
@@ -302,11 +302,11 @@ class GameScene: SKScene, WCSessionDelegate {
         // MARK: WIN AND LOSE CONDITIONS
         // -------------------------------------
         
-        if (self.sushiTower.count > 0) {
+        if (self.sushiPieceTower.count > 0) {
             // 1. if CAT and STICK are on same side - OKAY, keep going
             // 2. if CAT and STICK are on opposite sides -- YOU LOSE
-            let firstSushi:SushiPiece = self.sushiTower[0]
-            let chopstickPosition = firstSushi.stickPosition
+            let firstSushi:SushiPiece = self.sushiPieceTower[0]
+            let chopstickPosition = firstSushi.sPosition
             
             if (catPosition == chopstickPosition) {
                 // cat = left && chopstick == left
@@ -355,14 +355,14 @@ class GameScene: SKScene, WCSessionDelegate {
         //  When person taps mouse,
         //  remove a piece from the tower & redraw the tower
         // -------------------------------------
-        let pieceToRemove = self.sushiTower.first
+        let pieceToRemove = self.sushiPieceTower.first
         if (pieceToRemove != nil) {
             // SUSHI: hide it from the screen & remove from game logic
             pieceToRemove!.removeFromParent()
-            self.sushiTower.remove(at: 0)
+            self.sushiPieceTower.remove(at: 0)
             
             // SUSHI: loop through the remaining pieces and redraw the Tower
-            for piece in sushiTower {
+            for piece in sushiPieceTower {
                 piece.position.y = piece.position.y - SUSHI_PIECE_GAP
             }
             
